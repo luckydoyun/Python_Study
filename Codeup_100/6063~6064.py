@@ -1,5 +1,5 @@
 # codeup _ 100제 
-# 기초-산술연산
+# 기초-3항 연산
 
 a, b, c = map(int, input().split())
 

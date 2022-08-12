@@ -1,5 +1,5 @@
 # codeup _ 100제 
-# 기초-산술연산
+# 기초-비교연산
 
 # a, b = map(int, input().split())
 
