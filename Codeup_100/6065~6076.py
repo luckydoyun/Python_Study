@@ -1,5 +1,5 @@
 # codeup _ 100제 
-# 기초-조건/선택실행구조
+# 기초-조건/선택실행구조/반복실행구조
 
 
 # a, b, c = map(int, input().split())
@@ -76,3 +76,30 @@
 #     if n == 0:
 #         break
 #     print(n)
+
+# n = int(input())
+
+# while(n):
+#     print(n-1)
+#     n-=1
+
+# start = ord('a')
+# end = ord(input())
+
+# while(end - start + 1):
+#     print(chr(start), end=' ')
+#     start+=1
+
+# n = int(input())
+# start = 0
+
+# while(n + 1):
+#     print(start)
+#     start+=1
+#     n-=1
+
+n = int(input())
+start = 0
+
+for i in range(0,n + 1):
+    print(i)
