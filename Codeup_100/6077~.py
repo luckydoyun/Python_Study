@@ -69,3 +69,39 @@
 #         for j in range(0, b):
 #             print(i, k, j)
 # print(r * g * b)
+
+# 6084 소리 파일 저장용량 계산하기
+# h b(비트) c s 8bit = 1byte
+# h, b, c, s = map(int, input().split())
+
+# storage = h * b * c * s / 8 / 1024 / 1024
+# print(format(storage,'.1f'), 'MB')
+
+# 6085 그림 파일 저장용량 계산하기
+# w, h, b = map(int, input().split())
+
+# storage = w * h * b / 8 / 1024 / 1024
+# print(format(storage,'.2f'), 'MB')
+
+# 6086 거기까지! 이제 그만~
+# end = int(input())
+# start = 0
+# sum = 0
+
+# while(True):
+#     sum += start
+#     if sum >= end:
+#         break
+#     start += 1
+# print(sum)
+
+# 6087 3의 배수는 통과(설명)
+end = int(input())
+start = 1
+
+while(True):
+    if start > end:
+        break
+    if start % 3 != 0:
+        print(start, end=' ')
+    start += 1
