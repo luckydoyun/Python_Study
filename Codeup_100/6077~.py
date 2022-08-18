@@ -96,12 +96,46 @@
 # print(sum)
 
 # 6087 3의 배수는 통과(설명)
-end = int(input())
-start = 1
+# end = int(input())
+# start = 1
 
-while(True):
-    if start > end:
-        break
-    if start % 3 != 0:
-        print(start, end=' ')
-    start += 1
+# while(True):
+#     if start > end:
+#         break
+#     if start % 3 != 0:
+#         print(start, end=' ')
+#     start += 1
+
+# 6088 수 나열하기1
+# s, d, n = map(int, input().split())
+# result = s
+
+# for i in range(2, n + 1):
+#     result += d
+# print(result)
+
+# 6089 수 나열하기2
+# s, d, n = map(int, input().split())
+# result = s
+
+# for i in range(2, n + 1):
+#     result *= d
+# print(result)
+
+# 6090 수 나열하기3
+# a, m, d, n = map(int, input().split())
+# result = a
+
+# for i in range(2, n + 1):
+#     result = result * m + d
+
+# print(result)
+
+# 6091 함께 문제 푸는 날(설명)
+from math import gcd
+
+a, b, c = map(int, input().split())
+result = a * b // gcd(a, b)
+result = result * c // gcd(result, c)
+
+print(result)
