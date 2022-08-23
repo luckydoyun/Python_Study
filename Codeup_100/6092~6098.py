@@ -77,3 +77,81 @@
 #     for j in range(0, 19):
 #         print(arr[k][j], end=' ')
 #     print()
+
+# 6097 설탕과자 뽑기
+# 세로(h) 가로(w) 공백을 두고 입력
+# 막대의 개수(n)
+# 막대의 길이(i), 방향(d)(가로:0, 세로:1), 좌표(x,y)
+# h, w = map(int, input().split())
+
+# arr = []
+
+# for j in range(0, h):
+#     arr.append([])
+#     for k in range(0, w):
+#         arr[j].append(0)
+
+# n = int(input())
+
+# for j in range(0, n):
+#     i, d, x, y = map(int, input().split())
+#     if d == 1: #세로 막대기
+#         for k in range(i):
+#             arr[x + k - 1][y - 1] = 1
+#     else: #가로 막대기
+#         for k in range(i):
+#             arr[x - 1][y + k - 1] = 1
+
+# for j in range(0, h):
+#     for k in range(0, w):
+#         print(arr[j][k], end=' ')
+#     print()
+
+# 6098 성실한 개미(py)
+# 0 : 갈 수 있는 곳
+# 1 : 벽 또는 장애물
+# 2 : 먹이
+# 개미집은 (2, 2) = 출발점
+
+arr = []
+
+for i in range(10):
+    arr.append([])
+    arr[i] = list(map(int, input().split()))
+
+start_x = 2
+start_y = 2
+next_x = 2
+next_y = 2
+
+while(True):
+    # 시작은 항상 개미집(2, 2)
+    if arr[start_x - 1][start_y - 1] == 0: #도착한 곳이 갈수있는곳(0)이라면 가자
+        if arr[start_x - 1][start_y - 1] == 2: #도착한 곳이 먹이(2)가 있는 곳이라면 그만(오른쪽으로 가다가)
+            arr[start_x - 1][start_y - 1] = 9
+            break
+        arr[start_x - 1][start_y - 1] = 9
+        print(start_x, " 오른쪽을 가다가 내가 접수한곳 ", start_y)
+        start_y += 1
+    else: #도착한 곳이 갈수없는곳(1)이라면 되돌아가서 아래로 가자
+        start_y -= 1
+        start_x += 1
+        if start_x >= 10 or start_y >= 10:
+            break
+        if arr[start_x - 1][start_y - 1] == 2: #도착한 곳이 먹이(2)가 있는 곳이라면 그만(아래로 가다가)
+            arr[start_x - 1][start_y - 1] = 9
+            break
+        arr[start_x - 1][start_y - 1] = 9
+        print(start_x, " 아래로 가다가 내가 접수한곳 ", start_y)
+        start_y += 1
+    
+    if arr[start_x - 1][start_y - 1] == 2: #도착한 곳이 먹이(2)가 있는 곳이라면 그만
+            arr[start_x - 1][start_y - 1] = 9
+            break 
+
+#print("출력은 아래")
+for j in range(10):
+    for k in range(10):
+        print(arr[j][k], end=' ')
+    print()
+        
